@@ -3,35 +3,48 @@
   <head>
     <link rel="stylesheet" href="app.pcss">
   </head>
-<body class="m-2 bg-gray-200 flex flex-wrap justify-center">
-  <p class="italic text-lg w-1/2 text-center">
-    Community, education, and more for the psychedelic medicine movement
-  </p>
-  
-  <div>
+<body class="mb-2 bg-gray-200 flex flex-wrap justify-center">
+  <nav class="w-full flex justify-center bg-white h-16">
+    <ul class="flex items-center">
+      <li class="mr-6">
+        <a class="text-blue-500 hover:text-blue-800" href="#">Active</a>
+      </li>
+      <li>
+        Empathic Health
+      </li>
+    </ul>
+  </nav>
+
+  <hr class="border border-solid border-black w-full"/>
+
+  <div class="w-full m-4 flex flex-wrap justify-center">
+    <p class="italic text-lg w-1/2 text-center text-gray-900 mb-8">
+      Community, education, and more for the psychedelic medicine movement
+    </p>
     
-  </div>
-  
-  <div class="grid gap-2 grid-cols-2 my-4">
-    <blockquote>
-      83% of Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat massa a porttitor maximus. Quisque eleifend nulla mattis varius eleifend. Aliquam metus metus, egestas non mi commodo, viverra dignissim nibh. Nulla a tincidunt dolor.
-    </blockquote>
-    <div class="flex justify-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <form>
-        <p class="text-lg text-center text-gray-700">
-          Join our mailing list to receive bi-weekly updates on our community launch:
-        </p>
-        
-        <div class="flex flex-wrap gap-4 justify-end mt-3">
-          <label class="block text-gray-700 text-sm font-bold mb-2 hidden" for="email">
-            Email
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email">
-          <button class="justify-self-end rounded">Submit</button>
-        </div>
-      </form>
+    <div class="grid gap-2 grid-cols-2 my-4 items-center">
+      <blockquote class="items-center text-gray-900">
+        <span class="text-5xl">83%</span>
+        of women suffering PTSD from sexual trauma no longer had symptoms after 3.8 years when treated with MDMA
+      </blockquote>
+      <div class="flex justify-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form>
+          <p class="text-lg text-center text-gray-900">
+            Join our mailing list to receive bi-weekly updates on our community launch:
+          </p>
+          
+          <div class="flex flex-wrap gap-4 justify-end mt-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2 hidden" for="email">
+              Email
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email">
+            <button class="justify-self-end rounded text-gray-900">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+
   <script src="./index.js"></script>
-</body>
+  </body>
 </html>
