@@ -3,23 +3,35 @@
   <head>
     <link rel="stylesheet" href="app.pcss">
   </head>
-<body>
-  <script src="./index.js"></script>
-  <div class="text-red-700">
+<body class="m-2 bg-gray-300">
+  <div>
     
   </div>
-
+  
   <div>
-
+    
   </div>
-
-  <div class="grid grid-cols-2">
+  
+  <div class="grid gap-2 grid-cols-2">
     <blockquote>
       83% of Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat massa a porttitor maximus. Quisque eleifend nulla mattis varius eleifend. Aliquam metus metus, egestas non mi commodo, viverra dignissim nibh. Nulla a tincidunt dolor.
     </blockquote>
-    <div class="justify-center outline">
-      hello
+    <div class="flex justify-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form>
+        <p class="text-lg text-center text-gray-700">
+          Join our mailing list to receive bi-weekly updates on our community launch:
+        </p>
+        
+        <div class="flex flex-wrap gap-4 justify-end mt-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2 hidden" for="email">
+            Email
+          </label>
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email">
+          <button class="justify-self-end rounded">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
+  <script src="./index.js"></script>
 </body>
 </html>
