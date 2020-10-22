@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/lyonsbp/empathic-health-landing#readme",
   "dependencies": {
+    "netlify-lambda": "^2.0.1",
     "postcss-modules": "^3.2.2",
     "tailwindcss": "^1.9.4"
   },
