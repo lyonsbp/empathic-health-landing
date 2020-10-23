@@ -12,6 +12,7 @@ document
       );
       const data = await resp.json();
       console.log(data);
+      alert(data.msg);
     } catch (err) {
       console.log(err);
     }
