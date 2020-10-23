@@ -1,32 +1,40 @@
-const fetch = require("node-fetch");
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
-exports.handler = async function () {
+exports.handler = async function (evt) {
+  const email = evt.queryStringParameters.email;
+  mailchimp.setConfig({
+    apiKey: process.env.MAILCHIMP_API,
+    server: process.env.MAILCHIMP_DC,
+  });
+
   try {
-    const authenticationString = `Basic ${process.env.MAILCHIMP_API}`;
-    const baseUrl = `https://${process.env.MAILCHIMP_DC}.api.mailchimp.com/3.0`;
-    const response = await fetch(`${baseUrl}/ping`, {
-      mode: "no-cors",
-      headers: {
-        authorization: authenticationString,
-        Accept: "application/json",
+    const listId = process.env.MAILCHIMP_LIST_ID;
+    const subscribingUser = {
+      firstName: "Test",
+      lastName: "Name",
+      email: email,
+    };
+
+    const response = await mailchimp.lists.addListMember(listId, {
+      email_address: subscribingUser.email,
+      status: "subscribed",
+      merge_fields: {
+        FNAME: subscribingUser.firstName,
+        LNAME: subscribingUser.lastName,
       },
     });
-    if (!response.ok) {
-      // NOT res.status >= 200 && res.status < 300
-      return { statusCode: response.status, body: response.statusText };
-    }
-    const data = await response.json();
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data }),
+      body: JSON.stringify({
+        msg: `Successfully added contact ${subscribingUser.email}`,
+      }),
     };
-  } catch (error) {
-    console.log(error); // output to netlify function log
+  } catch (err) {
+    console.log(err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ msg: error.message }), // Could be a custom message or object i.e. JSON.stringify(err)
+      body: JSON.stringify({ msg: err }),
     };
   }
 };
