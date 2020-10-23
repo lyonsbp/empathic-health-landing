@@ -1,7 +1,8 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 exports.handler = async function (evt) {
-  const email = evt.queryStringParameters.email;
+  const { email, firstName, lastName } = evt.queryStringParameters;
+
   mailchimp.setConfig({
     apiKey: process.env.MAILCHIMP_API,
     server: process.env.MAILCHIMP_DC,
@@ -10,8 +11,8 @@ exports.handler = async function (evt) {
   try {
     const listId = process.env.MAILCHIMP_LIST_ID;
     const subscribingUser = {
-      firstName: "Test",
-      lastName: "Name",
+      firstName: firstName,
+      lastName: lastName,
       email: email,
     };
 
