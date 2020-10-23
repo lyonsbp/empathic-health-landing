@@ -13,7 +13,7 @@ signUpForm.addEventListener("submit", async (evt) => {
     );
     const data = await resp.json();
     console.log(data);
-    alertBox.classList.remove("hidden");
+    alertBox.classList.remove("opacity-0");
     /* setTimeout(() => {
       alertBox.classList.add("hidden");
     }, 3000); */
