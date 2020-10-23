@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx parcel src/index.html",
     "build": "npx parcel build src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "netlify-lambda install"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,15 @@
   },
   "homepage": "https://github.com/lyonsbp/empathic-health-landing#readme",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.22",
+    "netlify-lambda": "^2.0.1",
     "postcss-modules": "^3.2.2",
     "tailwindcss": "^1.9.4"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "cssnano": "^4.1.10"
-  }
+  },
+  "prettier": {}
 }

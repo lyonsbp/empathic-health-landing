@@ -1,0 +1,10 @@
+[build] # Make sure you don't have a duplicate [build] context!
+  functions = "netlify-functions/"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
