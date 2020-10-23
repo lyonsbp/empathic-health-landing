@@ -1,5 +1,3 @@
-console.log("hello world");
-
 document
   .querySelector("#sign-up-form")
   .addEventListener("submit", async (evt) => {
