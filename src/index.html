@@ -42,11 +42,8 @@
             </p>
 
             <div class="flex flex-wrap gap-4 mt-3">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2 hidden"
-                for="email"
-              >
-                Email
+              <label class="block mb-2 hidden" for="firstName">
+                First Name
               </label>
               <input
                 id="fname-input"
@@ -55,7 +52,11 @@
                 autocomplete="given-name"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="First Name"
+                name="firstName"
               />
+              <label class="block mb-2 hidden" for="lastName">
+                Last Name
+              </label>
               <input
                 id="lname-input"
                 type="text"
@@ -63,7 +64,9 @@
                 autocomplete="family-name"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Last Name"
+                name="lastName"
               />
+              <label class="block mb-2 hidden" for="email"> Email </label>
               <input
                 id="email-input"
                 type="email"
@@ -71,6 +74,7 @@
                 autocomplete="email"
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 placeholder="Email"
+                name="email"
                 required
               />
             </div>
@@ -78,14 +82,18 @@
             <label
               class="block text-gray-700 font-bold justify-self-start mt-5"
             >
-              <input class="mr-2 leading-tight" type="checkbox" />
+              <input
+                class="mr-2 leading-tight"
+                type="checkbox"
+                name="receiveEmails"
+              />
               <span class="text-sm">
                 I am okay receiving emails referencing psychedelics.
               </span>
             </label>
 
             <label class="block text-gray-700 font-bold justify-self-start">
-              <input class="mr-2 leading-tight" type="checkbox" />
+              <input class="mr-2 leading-tight" type="checkbox" name="pilot" />
               <span class="text-sm">
                 I am interested in becoming a pilot community member and the
                 super cool rewards that come with the program.
@@ -93,7 +101,12 @@
             </label>
 
             <label class="block text-gray-700 font-bold">
-              <input class="mr-2 leading-tight" type="checkbox" required />
+              <input
+                class="mr-2 leading-tight"
+                type="checkbox"
+                required
+                name="privacyTos"
+              />
               <span class="text-sm">
                 I agree to the
                 <a href="/" class="text-blue-500">terms of use</a> and
@@ -102,6 +115,7 @@
             </label>
 
             <div class="flex justify-end">
+              <button id="test-btn" class="rounded text-gray-900">Test</button>
               <button type="submit" class="rounded text-gray-900 mt-5">
                 Submit
               </button>
