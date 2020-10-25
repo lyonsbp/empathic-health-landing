@@ -33,3 +33,5 @@ testBtn.addEventListener("click", (evt) => {
   console.log(elements);
   console.log(elements.privacyTos.checked);
 });
+
+function startFactFade() {}
