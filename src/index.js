@@ -55,3 +55,16 @@ function startFactFade() {
 }
 
 startFactFade();
+
+let prevClass = "gray-200";
+function colorTest() {
+  const colorTextBox = document.querySelector("#color-test");
+  const body = document.querySelector("body");
+  colorTextBox.addEventListener("blur", () => {
+    const val = colorTextBox.value;
+    body.classList.replace(`bg-${prevClass}`, `bg-${val}`);
+    prevClass = val;
+  });
+}
+
+colorTest();
