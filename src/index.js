@@ -1,11 +1,17 @@
 const alertBox = document.querySelector("#success-alert");
 const signUpForm = document.querySelector("#sign-up-form");
+const testBtn = document.querySelector("#test-btn");
 
 signUpForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
-  const email = document.querySelector("#email-input").value;
-  const firstName = document.querySelector("#fname-input").value;
-  const lastName = document.querySelector("#lname-input").value;
+  const { elements } = signUpForm;
+  const email = elements.email.value;
+  const firstName = elements.firstName.value;
+  const lastName = elements.lastName.value;
+  const receiveEmails = elements.receiveEmails.checked;
+  const pilot = elements.pilot.checked;
+  const privacyTos = elements.privacyTos.checked;
+  console.log(email, firstName, lastName, receiveEmails, pilot, privacyTos);
 
   try {
     const resp = await fetch(
@@ -20,4 +26,10 @@ signUpForm.addEventListener("submit", async (evt) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+testBtn.addEventListener("click", (evt) => {
+  const { elements } = signUpForm;
+  console.log(elements);
+  console.log(elements.privacyTos.checked);
 });
