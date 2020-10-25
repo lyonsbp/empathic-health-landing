@@ -34,4 +34,24 @@ testBtn.addEventListener("click", (evt) => {
   console.log(elements.privacyTos.checked);
 });
 
-function startFactFade() {}
+function startFactFade() {
+  const [fact1, fact2, fact3] = document.querySelectorAll("blockquote");
+  const delayTime = 5000;
+  const transitionTime = 700;
+  console.log(fact1, fact2, fact3);
+
+  setTimeout(() => {
+    fact1.classList.add("opacity-0");
+    fact2.classList.remove("opacity-0");
+  }, delayTime);
+  setTimeout(() => {
+    fact2.classList.add("opacity-0");
+    fact3.classList.remove("opacity-0");
+  }, delayTime * 2 + transitionTime);
+  setTimeout(() => {
+    fact1.classList.remove("opacity-0");
+    fact2.classList.remove("opacity-0");
+  }, delayTime * 3 + 2 * transitionTime);
+}
+
+startFactFade();
