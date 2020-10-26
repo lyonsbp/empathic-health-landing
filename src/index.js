@@ -1,3 +1,5 @@
+import "@fortawesome/fontawesome-free/css/all.css";
+
 const alertBox = document.querySelector("#success-alert");
 const signUpForm = document.querySelector("#sign-up-form");
 const testBtn = document.querySelector("#test-btn");
