@@ -56,7 +56,7 @@ function startFactFade() {
 
 startFactFade();
 
-let prevClass = "gray-200";
+let prevClass = "red-600";
 function colorTest() {
   const colorTextBox = document.querySelector("#color-test");
   const body = document.querySelector("body");
