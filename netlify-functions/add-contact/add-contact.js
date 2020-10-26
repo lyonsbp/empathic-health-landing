@@ -1,7 +1,14 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 exports.handler = async function (evt) {
-  const { email, firstName, lastName } = evt.queryStringParameters;
+  const {
+    email,
+    firstName,
+    lastName,
+    receiveEmails,
+    privacyTos,
+    pilot,
+  } = evt.queryStringParameters;
 
   mailchimp.setConfig({
     apiKey: process.env.MAILCHIMP_API,
@@ -11,9 +18,12 @@ exports.handler = async function (evt) {
   try {
     const listId = process.env.MAILCHIMP_LIST_ID;
     const subscribingUser = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
+      firstName,
+      lastName,
+      email,
+      receiveEmails,
+      privacyTos,
+      pilot,
     };
 
     const response = await mailchimp.lists.addListMember(listId, {
@@ -22,6 +32,9 @@ exports.handler = async function (evt) {
       merge_fields: {
         FNAME: subscribingUser.firstName,
         LNAME: subscribingUser.lastName,
+        REMAILS: subscribingUser.receiveEmails,
+        PILOT: subscribingUser.pilot,
+        PRIVTOS: subscribingUser.privacyTos,
       },
     });
 

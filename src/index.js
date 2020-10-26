@@ -17,7 +17,7 @@ signUpForm.addEventListener("submit", async (evt) => {
 
   try {
     const resp = await fetch(
-      `/.netlify/functions/add-contact?email=${email}&firstName=${firstName}&lastName=${lastName}`
+      `/.netlify/functions/add-contact?email=${email}&firstName=${firstName}&lastName=${lastName}&receiveEmails=${receiveEmails}&pilot=${pilot}&privacyTos=${privacyTos}`
     );
     const data = await resp.json();
     console.log(data);
