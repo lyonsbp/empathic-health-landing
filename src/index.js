@@ -13,7 +13,6 @@ signUpForm.addEventListener("submit", async (evt) => {
   const receiveEmails = elements.receiveEmails.checked;
   const pilot = elements.pilot.checked;
   const privacyTos = elements.privacyTos.checked;
-  console.log(email, firstName, lastName, receiveEmails, pilot, privacyTos);
 
   try {
     const resp = await fetch(
@@ -51,7 +50,7 @@ function handleModalSetup() {
 
   // Allow elements with .modal-close class to close modal
   const closemodal = document.querySelectorAll(".modal-close");
-  for (var i = 0; i < closemodal.length; i++) {
+  for (let i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener("click", toggleModal);
   }
 }
@@ -59,7 +58,6 @@ function startFactFade() {
   const [fact1, fact2, fact3] = document.querySelectorAll("blockquote");
   const delayTime = 5000;
   const transitionTime = 700;
-  console.log(fact1, fact2, fact3);
 
   setTimeout(() => {
     fact1.classList.add("opacity-0");
