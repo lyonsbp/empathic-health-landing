@@ -2,7 +2,10 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 const alertBox = document.querySelector("#success-alert");
 const signUpForm = document.querySelector("#sign-up-form");
+const howDidForm = document.querySelector("#how-did-you-hear-form");
 const testBtn = document.querySelector("#test-btn");
+const howSelectBox = document.querySelector("#how-select");
+let userEmail = null;
 
 signUpForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
@@ -21,16 +24,52 @@ signUpForm.addEventListener("submit", async (evt) => {
     const data = await resp.json();
     console.log(data);
     alertBox.classList.remove("opacity-0");
+    userEmail = email;
     /* setTimeout(() => {
       alertBox.classList.add("hidden");
     }, 3000); */
+    toggleModal();
   } catch (err) {
+    console.log(err);
+  }
+});
+
+howDidForm.addEventListener("submit", async (evt) => {
+  evt.preventDefault();
+  const { elements } = howDidForm;
+  let referralSource = elements.howSelect.value;
+  if (referralSource === "friend") {
+    const friendName = elements.friendInput.value;
+    referralSource = `${referralSource} - ${friendName}`;
+  }
+
+  try {
+    const resp = await fetch(
+      `/.netlify/functions/update-contact?email=${userEmail}&refSource=${referralSource}`
+    );
+    const data = await resp.json();
+    console.log(data);
+    /* setTimeout(() => {
+      alertBox.classList.add("hidden");
+    }, 3000); */
+    toggleModal();
+  } catch (err) {
+    toggleModal();
     console.log(err);
   }
 });
 
 testBtn.addEventListener("click", (evt) => {
   toggleModal();
+});
+
+howSelectBox.addEventListener("change", (evt) => {
+  const referralSource = evt.target.value;
+  if (referralSource === "friend") {
+    showFriendInput();
+  } else {
+    hideFriendInput();
+  }
 });
 
 function handleModalSetup() {
@@ -54,6 +93,7 @@ function handleModalSetup() {
     closemodal[i].addEventListener("click", toggleModal);
   }
 }
+
 function startFactFade() {
   const [fact1, fact2, fact3] = document.querySelectorAll("blockquote");
   const delayTime = 5000;
@@ -79,6 +119,20 @@ function toggleModal() {
   modal.classList.toggle("opacity-0");
   modal.classList.toggle("pointer-events-none");
   body.classList.toggle("modal-active");
+}
+
+function hideFriendInput() {
+  const friendInputContainer = document.querySelector(
+    "#friend-input-container"
+  );
+  friendInputContainer.classList.add("hidden");
+}
+
+function showFriendInput() {
+  const friendInputContainer = document.querySelector(
+    "#friend-input-container"
+  );
+  friendInputContainer.classList.remove("hidden");
 }
 
 startFactFade();

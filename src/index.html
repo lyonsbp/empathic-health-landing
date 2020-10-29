@@ -190,7 +190,7 @@
                     Test
                   </button>
                   <button type="submit" class="rounded mt-5 primary">
-                    Submit
+                    Sign Up!
                   </button>
                 </div>
 
@@ -387,7 +387,7 @@
         <div class="modal-content py-4 text-left px-6">
           <!--Title-->
           <div class="flex justify-between items-center pb-3">
-            <p class="text-2xl font-bold">Simple Modal!</p>
+            <p class="text-2xl font-bold">Thanks for signing up!</p>
             <div class="modal-close cursor-pointer z-50">
               <svg
                 class="fill-current text-black"
@@ -404,25 +404,67 @@
           </div>
 
           <!--Body-->
-          <p>Modal content can go here</p>
-          <p>...</p>
-          <p>...</p>
-          <p>...</p>
-          <p>...</p>
-
-          <!--Footer-->
-          <div class="flex justify-end pt-2">
-            <button
-              class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2"
-            >
-              Action
-            </button>
-            <button
-              class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400"
-            >
-              Close
-            </button>
-          </div>
+          <form id="how-did-you-hear-form">
+            <div class="my-2">
+              <label
+                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                for="grid-state"
+              >
+                How did you hear about us?
+              </label>
+              <div class="relative">
+                <select
+                  class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
+                  id="how-select"
+                  required
+                  name="howSelect"
+                >
+                  <option value="reddit">Reddit</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="search">Search Engine</option>
+                  <option value="friend">Friend (please specify below)</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="my-2 hidden" id="friend-input-container">
+              <label class="mb-2 hidden" for="email">Name of Friend</label>
+              <input
+                id="friend-input"
+                type="text"
+                placeholder="Name of Friend"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                name="friendInput"
+              />
+            </div>
+            <!--Footer-->
+            <div class="flex justify-end pt-2">
+              <button
+                type="button"
+                class="modal-close px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400"
+              >
+                Update
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
