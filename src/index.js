@@ -31,11 +31,30 @@ signUpForm.addEventListener("submit", async (evt) => {
 });
 
 testBtn.addEventListener("click", (evt) => {
-  const { elements } = signUpForm;
-  console.log(elements);
-  console.log(elements.privacyTos.checked);
+  toggleModal();
 });
 
+function handleModalSetup() {
+  // Allow escape key to close modal
+  document.onkeydown = function (evt) {
+    evt = evt || window.event;
+    let isEscape = false;
+    if ("key" in evt) {
+      isEscape = evt.key === "Escape" || evt.key === "Esc";
+    } else {
+      isEscape = evt.keyCode === 27;
+    }
+    if (isEscape && document.body.classList.contains("modal-active")) {
+      toggleModal();
+    }
+  };
+
+  // Allow elements with .modal-close class to close modal
+  const closemodal = document.querySelectorAll(".modal-close");
+  for (var i = 0; i < closemodal.length; i++) {
+    closemodal[i].addEventListener("click", toggleModal);
+  }
+}
 function startFactFade() {
   const [fact1, fact2, fact3] = document.querySelectorAll("blockquote");
   const delayTime = 5000;
@@ -56,17 +75,13 @@ function startFactFade() {
   }, delayTime * 3 + 2 * transitionTime);
 }
 
-startFactFade();
-
-let prevClass = "red-600";
-function colorTest() {
-  const colorTextBox = document.querySelector("#color-test");
+function toggleModal() {
   const body = document.querySelector("body");
-  colorTextBox.addEventListener("blur", () => {
-    const val = colorTextBox.value;
-    body.classList.replace(`bg-${prevClass}`, `bg-${val}`);
-    prevClass = val;
-  });
+  const modal = document.querySelector(".modal");
+  modal.classList.toggle("opacity-0");
+  modal.classList.toggle("pointer-events-none");
+  body.classList.toggle("modal-active");
 }
 
-colorTest();
+startFactFade();
+handleModalSetup();
