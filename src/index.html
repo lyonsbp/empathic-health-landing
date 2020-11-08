@@ -40,8 +40,10 @@
     <link rel="stylesheet" href="assets/app.pcss" />
   </head>
   <body class="bg-white wave">
-    <header class="bg-cover bg-center flex justify-center flex-wrap">
-      <nav class="w-full flex self-start justify-around mt-10">
+    <header
+      class="bg-cover bg-center flex flex-col justify-around align-center"
+    >
+      <nav class="w-full flex self-start justify-around">
         <div class="bg-white rounded-3xl px-5">
           <img class="h-40" src="/assets/images/logo-3.png" />
         </div>
@@ -58,10 +60,13 @@
           </a>
         </div>
       </nav>
-      <p class="font-bold text-5xl xl:w-3/4 w-1/2 text-center text-white mb-16">
+      <p class="font-bold text-5xl text-center text-white">
         Interactive social community and validated resource center for the
         psychedelic medicine movement
       </p>
+      <button class="text-xl font-bold w-auto mx-auto primary">
+        Learn More
+      </button>
     </header>
 
     <div class="flex-1 overflow-y-auto">
@@ -218,7 +223,7 @@
                   <button id="test-btn" class="rounded text-gray-900 hidden">
                     Test
                   </button>
-                  <button type="submit" class="rounded mt-5 primary">
+                  <button type="submit" class="rounded mt-5 primary basic">
                     Sign Up!
                   </button>
                 </div>
