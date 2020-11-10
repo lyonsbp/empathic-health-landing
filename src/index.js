@@ -5,6 +5,7 @@ const signUpForm = document.querySelector("#sign-up-form");
 const howDidForm = document.querySelector("#how-did-you-hear-form");
 const testBtn = document.querySelector("#test-btn");
 const howSelectBox = document.querySelector("#how-select");
+const learnMoreBtn = document.querySelector("#learn-more-btn");
 let userEmail = null;
 
 signUpForm.addEventListener("submit", async (evt) => {
@@ -70,6 +71,10 @@ howSelectBox.addEventListener("change", (evt) => {
   } else {
     hideFriendInput();
   }
+});
+
+learnMoreBtn.addEventListener("click", (evt) => {
+  window.scrollTo(0, document.body.scrollHeight);
 });
 
 function handleModalSetup() {
