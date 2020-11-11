@@ -2,7 +2,7 @@
   "presets": [
     ["@babel/env", {
       "targets": {
-        "browsers": ["last 2 Chrome versions"]
+        "browsers": ["last 2 Chrome versions", "last 2 Safari versions"]
       }
     }]
   ]
