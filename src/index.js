@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 const howSelectBox = document.querySelector("#how-select");
 const learnMoreBtn = document.querySelector("#learn-more-btn");
 const signUpForm = document.querySelector("#sign-up-form");
+const howDidForm = document.querySelector("#how-did-you-hear-form");
 let userEmail = null;
 
 signUpForm.addEventListener("submit", async (evt) => {
@@ -37,7 +38,6 @@ signUpForm.addEventListener("submit", async (evt) => {
 howDidForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
-  const howDidForm = document.querySelector("#how-did-you-hear-form");
   const { elements } = howDidForm;
   let referralSource = elements.howSelect.value;
   if (referralSource === "friend") {
