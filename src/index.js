@@ -61,10 +61,6 @@ howDidForm.addEventListener("submit", async (evt) => {
   }
 });
 
-testBtn.addEventListener("click", (evt) => {
-  toggleModal();
-});
-
 howSelectBox.addEventListener("change", (evt) => {
   const referralSource = evt.target.value;
   if (referralSource === "friend") {
