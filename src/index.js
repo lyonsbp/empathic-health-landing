@@ -2,13 +2,13 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 const howSelectBox = document.querySelector("#how-select");
 const learnMoreBtn = document.querySelector("#learn-more-btn");
+const signUpForm = document.querySelector("#sign-up-form");
 let userEmail = null;
 
 signUpForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
   const alertBox = document.querySelector("#success-alert");
-  const signUpForm = document.querySelector("#sign-up-form");
   const { elements } = signUpForm;
   const email = elements.email.value;
   const firstName = elements.firstName.value;
