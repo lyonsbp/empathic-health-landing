@@ -38,8 +38,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="canonical" href="https://keen-carson-21fb10.netlify.app/" />
-    <link rel="stylesheet" href="assets/tailwind.pcss" />
     <link rel="stylesheet" href="assets/app.pcss" />
+    <link
+      rel="preload"
+      href="assets/tailwind.pcss"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="assets/tailwind.pcss" /></noscript>
   </head>
   <body class="bg-white wave">
     <header class="flex flex-col justify-around align-center header">
