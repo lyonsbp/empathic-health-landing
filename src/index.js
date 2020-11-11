@@ -1,15 +1,14 @@
 import "@fortawesome/fontawesome-free/css/all.css";
 
-const alertBox = document.querySelector("#success-alert");
-const signUpForm = document.querySelector("#sign-up-form");
-const howDidForm = document.querySelector("#how-did-you-hear-form");
-const testBtn = document.querySelector("#test-btn");
 const howSelectBox = document.querySelector("#how-select");
 const learnMoreBtn = document.querySelector("#learn-more-btn");
 let userEmail = null;
 
 signUpForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
+
+  const alertBox = document.querySelector("#success-alert");
+  const signUpForm = document.querySelector("#sign-up-form");
   const { elements } = signUpForm;
   const email = elements.email.value;
   const firstName = elements.firstName.value;
@@ -37,6 +36,8 @@ signUpForm.addEventListener("submit", async (evt) => {
 
 howDidForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
+
+  const howDidForm = document.querySelector("#how-did-you-hear-form");
   const { elements } = howDidForm;
   let referralSource = elements.howSelect.value;
   if (referralSource === "friend") {
