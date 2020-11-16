@@ -5,7 +5,6 @@ exports.handler = async function (evt) {
     email,
     firstName,
     lastName,
-    receiveEmails,
     privacyTos,
     pilot,
   } = evt.queryStringParameters;
@@ -21,7 +20,6 @@ exports.handler = async function (evt) {
       firstName,
       lastName,
       email,
-      receiveEmails,
       privacyTos,
       pilot,
     };
@@ -32,7 +30,6 @@ exports.handler = async function (evt) {
       merge_fields: {
         FNAME: subscribingUser.firstName,
         LNAME: subscribingUser.lastName,
-        REMAILS: subscribingUser.receiveEmails,
         PILOT: subscribingUser.pilot,
         PRIVTOS: subscribingUser.privacyTos,
       },

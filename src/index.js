@@ -14,13 +14,12 @@ signUpForm.addEventListener("submit", async (evt) => {
   const email = elements.email.value;
   const firstName = elements.firstName.value;
   const lastName = elements.lastName.value;
-  const receiveEmails = elements.receiveEmails.checked;
   const pilot = elements.pilot.checked;
   const privacyTos = elements.privacyTos.checked;
 
   try {
     const resp = await fetch(
-      `/.netlify/functions/add-contact?email=${email}&firstName=${firstName}&lastName=${lastName}&receiveEmails=${receiveEmails}&pilot=${pilot}&privacyTos=${privacyTos}`
+      `/.netlify/functions/add-contact?email=${email}&firstName=${firstName}&lastName=${lastName}&pilot=${pilot}&privacyTos=${privacyTos}`
     );
     const data = await resp.json();
     console.log(data);
