@@ -93,7 +93,7 @@
       </p>
       <button
         id="learn-more-btn"
-        class="text-xl font-bold w-auto mx-auto primary"
+        class="text-lg w-auto mx-auto primary hover-italic"
       >
         Learn More
       </button>
@@ -253,25 +253,25 @@
     </div>
 
     <!-- Signup Form -->
-    <div class="signup-section flex flex-col justify-center lg:px-10">
+    <div class="bg-teal-400 flex flex-col justify-center lg:px-10">
       <div
         id="form-container"
-        class="bg-white shadow-2xl rounded px-8 py-6 m-4 sm:max-w-full lg:max-w-2xl lg:mx-auto"
+        class="px-8 py-6 m-4 sm:max-w-full md:max-w-lg md:mx-auto"
       >
         <form id="sign-up-form">
-          <p class="text-xl text-center text-gray-900 font-semibold">
+          <p class="text-xl text-center text-white font-semibold">
             Join our mailing list to receive bi-weekly updates on our community
             launch:
           </p>
 
-          <div class="flex flex-wrap gap-4 mt-3">
+          <div class="flex flex-wrap gap-4 my-3">
             <label class="mb-2 hidden" for="firstName"> First Name </label>
             <input
               id="fname-input"
               type="text"
               placeholder="First Name"
               autocomplete="given-name"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent white-placeholder border-b-2 border-white"
               placeholder="First Name"
               name="firstName"
             />
@@ -281,7 +281,7 @@
               type="text"
               placeholder="Last Name"
               autocomplete="family-name"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent white-placeholder border-b-2 border-white"
               placeholder="Last Name"
               name="lastName"
             />
@@ -289,9 +289,9 @@
             <input
               id="email-input"
               type="email"
-              placeholder="Email*"
+              placeholder="E-mail*"
               autocomplete="email"
-              class="shadow appearance-none border rounded w-full py-2 px-3 mb-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline border-b-2 border-white email-input"
               name="email"
               required
             />
@@ -299,7 +299,7 @@
 
           <label class="block text-gray-700 font-bold justify-self-start">
             <input class="mr-2 leading-tight" type="checkbox" name="pilot" />
-            <span class="text-sm">
+            <span class="text-sm italic">
               I am interested in helping develop the vision of the community.
             </span>
           </label>
@@ -311,7 +311,7 @@
               required
               name="privacyTos"
             />
-            <span class="text-sm">
+            <span class="text-sm italic">
               I agree to the
               <a
                 href="/assets/terms-of-use.pdf"
@@ -329,13 +329,10 @@
             </span>
           </label>
 
-          <div class="flex justify-end">
-            <button id="test-btn" class="rounded text-gray-900 hidden">
-              Test
-            </button>
+          <div class="flex justify-center">
             <button
               type="submit"
-              class="rounded mt-5 primary basic text-xl font-semibold"
+              class="rounded mt-5 primary basic text-xl font-semibold shadow-2xl"
             >
               Sign Up!
             </button>
