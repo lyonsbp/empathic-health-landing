@@ -5,6 +5,9 @@ module.exports = {
   },
   purge: ["./src/**/*.html"],
   theme: {
+    fontFamily: {
+      gopher: ["gopher", "ui-sans-serif"],
+    },
     extend: {},
   },
   variants: {},
