@@ -8,7 +8,6 @@ let userEmail = null;
 
 signUpForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
-
   const alertBox = document.querySelector("#success-alert");
   const { elements } = signUpForm;
   const email = elements.email.value;
