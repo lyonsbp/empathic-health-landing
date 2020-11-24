@@ -16,6 +16,7 @@ signUpForm.addEventListener("submit", async (evt) => {
   const pilot = elements.pilot.checked;
   const privacyTos = elements.privacyTos.checked;
 
+  console.log(email, pilot, privacyTos);
   try {
     const resp = await fetch(
       `/.netlify/functions/add-contact?email=${email}&firstName=${firstName}&lastName=${lastName}&pilot=${pilot}&privacyTos=${privacyTos}`
