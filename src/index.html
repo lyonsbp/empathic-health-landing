@@ -52,7 +52,7 @@
     <noscript><link rel="stylesheet" href="assets/tailwind.pcss" /></noscript>
   </head>
   <body class="bg-white font-fahkwang">
-    <div class="header md:min-h-screen">
+    <div class="header md:min-h-screen relative">
       <header class="flex justify-center pb-10 pt-2">
         <nav class="md:w-full flex justify-around mr-5 md:mr-0">
           <div class="rounded-3xl pl-0 pr-1">
@@ -114,7 +114,18 @@
           Learn More
         </button>
       </div>
+
+      <div class="hidden md:block absolute bottom-0 left-0 ml-10 mb-16">
+        <span class="italic text-center block">Proud Member</span>
+        <img src="/assets/images/pma-img.png" />
+      </div>
     </div>
+
+    <div class="md:hidden ml-10 mb-16">
+      <span class="italic text-center block">Proud Member</span>
+      <img src="/assets/images/pma-img.png" />
+    </div>
+
     <!-- Facts Cards -->
     <h3 class="text-center text-3xl">
       Rigorous scientific studies are redefining health - and
