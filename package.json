@@ -22,7 +22,7 @@
   "homepage": "https://github.com/lyonsbp/empathic-health-landing#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "@mailchimp/mailchimp_marketing": "^3.0.22",
+    "@mailchimp/mailchimp_marketing": "^3.0.42",
     "cssnano": "^4.1.10",
     "netlify-lambda": "^2.0.1",
     "parcel-plugin-ogimage": "^1.2.0",
